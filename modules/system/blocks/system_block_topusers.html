@@ -1,0 +1,1 @@
+<{includeq file="$xoops_rootpath/modules/tadtools/themes_common/blocks_tpl/system/blocks/system_block_topusers.tpl"}>

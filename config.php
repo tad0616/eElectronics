@@ -9,7 +9,7 @@ $theme_kind = 'bootstrap3';
 $theme_kind_arr = 'bootstrap3';
 
 //引入哪些選單？ all(含 my_menu,admin,user),my_menu,admin,user
-$menu_var_kind = 'all';
+$menu_var_kind = 'my_menu';
 
 //額外顏色設定 如： bootstrap3/themes/light/Cerulean
 $theme_color = 'bootstrap3/themes/light/Cerulean';
@@ -99,7 +99,7 @@ $config_tabs[3] = 1;
 $config_enable['slide_width'] = array('enable' => '1', 'min' => '', 'max' => '', 'require' => '0', 'default' => '12');
 
 //佈景圖片高度[slideshow_responsive.html]，值：數值，單位一律為 px
-$config_enable['slide_height'] = array('enable' => '1', 'min' => '', 'max' => '', 'require' => '0', 'default' => '0');
+$config_enable['slide_height'] = array('enable' => '0', 'min' => '', 'max' => '', 'require' => '0', 'default' => '0');
 
 //是否可上傳滑動圖片[slideshow_responsive.html]
 $config_enable['use_slide'] = array('enable' => '1', 'min' => '', 'max' => '', 'require' => '0', 'default' => '1');

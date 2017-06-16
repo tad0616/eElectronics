@@ -25,7 +25,10 @@
         </label>
 
         <ul id="main-menu" class="sm sm-blue">
-          <li><a href="<{$xoops_url}>">回首頁</a></li>
+          <{if $show_sitename==0}>
+            <li><a href="<{$xoops_url}>/index.php"><{$smarty.const._TAD_HOME}></a></li>
+          <{/if}>
+          <{includeq file="$xoops_rootpath/modules/tadtools/themes3_tpl/menu_main_clean.tpl"}>
           <{foreach from=$menu_var item=menu name=m}>
             <li><a href="<{$menu.url}>" target="<{$menu.target}>"><{$menu.title}></a>
             <{if $menu.submenu}>
@@ -45,6 +48,33 @@
             <{/if}>
             </li>
           <{/foreach}>
+          <{if $xoops_isuser}>
+            <{if $xoops_isadmin}>
+              <li><a href="<{$xoops_url}>/modules/tad_themes/admin/dropdown.php" title="<{$smarty.const._TAD_MENU_CONFIG}>"><i class="fa fa-plus-circle"></i></a></li>
+
+              <{if $xoops_dirname=="" || $xoops_dirname=="system"}>
+                <li><a href="<{$xoops_url}>/admin.php" title="<{$smarty.const.TF_MODULE_CONFIG}>"><span class="fa fa-wrench"></span></a></li>
+              <{else}>
+                <li><a href="<{$xoops_url}>/modules/<{$xoops_dirname}>/admin/index.php" title="<{$smarty.const.TF_MODULE_CONFIG}>"><span class="fa fa-wrench"></span></a></li>
+              <{/if}>
+            <{/if}>
+
+            <li>
+              <a  href="#">
+                <{$smarty.const.TF_USER_WELCOME}><{$xoops_name}>
+              </a>
+
+              <{includeq file="$xoops_rootpath/modules/tadtools/themes3_tpl/menu_user_clean.tpl"}>
+
+            </li>
+          <{elseif $openid_login!="3"}>
+            <li>
+              <a href="#">
+                <{$smarty.const.TF_USER_ENTER}>
+              </a>
+                <{includeq file="$xoops_rootpath/modules/tadtools/themes3_tpl/menu_login_clean.tpl"}>
+            </li>
+          <{/if}>
         </ul>
       </div>
   </div>
